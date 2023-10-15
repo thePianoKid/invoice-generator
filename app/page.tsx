@@ -6,6 +6,8 @@ export default function Home() {
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
 
+  
+
   return (
     <main>
       <Box sx={{ ml: 3, mr:3 }}>
@@ -18,16 +20,21 @@ export default function Home() {
             variant="outlined" 
             sx={{ pr: 3, width: "45%" }}
             value={customerName}
-          />
+            onChange={(e) => setCustomerName(e.target.value)}
+            />
           <TextField 
             id="customer-email" 
             label="Customer Email" 
             variant="outlined" 
             sx={{ width: "45%" }} 
-            value={customerName}
+            value={customerEmail}
+            onChange={(e) => setCustomerEmail(e.target.value)}
           />
         </Box>
-        <Button variant="contained" size="large">Generate Invoice</Button>
+        <Button 
+          variant="contained" 
+          size="large" 
+        >Generate Invoice</Button>
       </Box>
     </main>
   )
